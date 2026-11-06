@@ -1,0 +1,104 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<!-- hethi  jdida 3raftha tkhalik defili verticalement l ecran wakteli le contenu  depasse la taille de l ecran-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F7FF"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+        <!-- er=eyariahi(instruction ds)-->
+        <!-- TITRE  emojis jebtou ml clavier juste 3jebni f deco-->
+        <TextView
+            android:id="@+id/txt_titre_er"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="DOUANE TEMPORELLE  ✈"
+            android:textColor="#4527A0"
+            android:textSize="26sp"
+            android:textStyle="normal|bold|italic" />
+
+        <!-- IMAGE : kalamt chat kotlou yaatini exp d activite bech yinspirini w aamlna creation mab3athna mtaa l image hethi-->
+        <ImageView
+            android:id="@+id/img_passport_er"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:src="@drawable/passport_time"
+            android:scaleType="fitCenter"
+            android:contentDescription="Passeport et chronomètre"
+            android:layout_marginBottom="15dp" />
+
+        <!-- NOM -->
+        <EditText
+            android:id="@+id/edt_nom_er"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom du voyageur"
+            android:inputType="textPersonName"
+            android:padding="14dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#512DA8" />
+
+        <!-- ANNEE DE NAISSANCE -->
+        <EditText
+            android:id="@+id/edt_naissance_er"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Année de naissance (ex: 1990)"
+            android:inputType="number"
+            android:padding="14dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#512DA8" />
+
+        <!-- ANNEE DE DESTINATION -->
+        <EditText
+            android:id="@+id/edt_destination_er"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Année de destination (ex: 2050)"
+            android:inputType="number"
+            android:padding="14dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#512DA8" />
+
+        <!-- MOTIF -->
+        <TextView
+            android:id="@+id/txt_motif_er"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Motif du voyage :"
+            android:textColor="#4527A0"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp" />
+<!--  spinner howa liste deroulante mte3na tnjam tekhou un seul choix btbi3a w bech naabiwh f java selon donnes chfih-->
+        <Spinner
+            android:id="@+id/sp_motif_er"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#512DA8" />
+
+        <!-- BOUTON l emojis jebtou ml clavier juste 3jebni f deco -->
+        <Button
+            android:id="@+id/btn_inspecter_er"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Inspecter le profil 🔎"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="#512DA8" />
+
+    </LinearLayout>
+
+</ScrollView>
