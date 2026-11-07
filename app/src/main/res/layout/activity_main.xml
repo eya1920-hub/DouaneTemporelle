@@ -1,5 +1,5 @@
 
-<?xml version="1.0" encoding="utf-8"?>
+
 <!-- hethi  jdida 3raftha tkhalik defili verticalement l ecran wakteli le contenu  depasse la taille de l ecran-->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -41,7 +41,7 @@
             android:id="@+id/edt_nom_er"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nom du voyageur"
+            android:hint="  🧑‍💼/👩‍💼 Nom du voyageur"
             android:inputType="textPersonName"
             android:padding="14dp"
             android:layout_marginBottom="12dp"
@@ -52,7 +52,7 @@
             android:id="@+id/edt_naissance_er"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Année de naissance (ex: 1990)"
+            android:hint="  📆  Année de naissance (ex: 1990)"
             android:inputType="number"
             android:padding="14dp"
             android:layout_marginBottom="12dp"
@@ -63,7 +63,7 @@
             android:id="@+id/edt_destination_er"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Année de destination (ex: 2050)"
+            android:hint="  📆    Année de destination (ex: 2050)"
             android:inputType="number"
             android:padding="14dp"
             android:layout_marginBottom="12dp"
