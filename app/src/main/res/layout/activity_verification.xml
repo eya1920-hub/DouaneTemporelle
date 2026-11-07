@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="1"
+    android:background="#E8E8FF"
+    tools:context=".VerificationActivity">
+
+    <!-- IMAGE AVEC WEIGHT 0.3 -->
+    <ImageView
+        android:id="@+id/img_globe_er"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:padding="0dp"
+        android:src="@drawable/airplanglobe"
+        android:scaleType="fitCenter" />
+
+    <!-- REALTIVE LAYOUT AVEC WEIGHT 0.7 -->
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/bg_passeport_er"
+        android:padding="14dp">
+
+        <!--TITRE -->
+
+        <!-- UN TRAIT POUR LA MSIE EN  FORME -->
+        <TextView
+            android:id="@+id/tv_titre_er"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Passeport Temporel"
+            android:textColor="#26215C"
+            android:textSize="26sp"
+            android:textStyle="bold|italic" />
+
+        <!-- CADRE UNIQUE POUR LES 3 INFOS -->
+
+        <View
+            android:id="@+id/line_er"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_below="@id/tv_titre_er"
+            android:layout_marginTop="11dp"
+            android:background="#534AB7" />
+
+        <View
+            android:id="@+id/cadre_infos_er"
+            android:layout_width="251dp"
+            android:layout_height="179dp"
+            android:layout_alignTop="@+id/tv_nom_er"
+            android:layout_alignBottom="@+id/tv_motif_er"
+            android:layout_marginTop="-13dp"
+            android:layout_marginBottom="-29dp"
+            android:background="@drawable/bg_info_er" />
+
+        <TextView
+            android:id="@+id/tv_nom_er"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line_er"
+            android:layout_marginTop="121dp"
+            android:paddingStart="14dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="4dp"
+            android:textColor="#26215C"
+            android:textSize="16sp"
+            tools:text="👤 Nom : Eya Riahi" />
+
+        <TextView
+            android:id="@+id/tv_age_er"
+            android:layout_width="244dp"
+            android:layout_height="43dp"
+            android:layout_below="@id/tv_nom_er"
+            android:layout_marginTop="5dp"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="4dp"
+            android:textColor="#26215C"
+            android:textSize="16sp"
+            tools:text="⏳ Âge temporel  : 35 ans" />
+
+        <TextView
+            android:id="@+id/tv_motif_er"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_age_er"
+            android:layout_marginTop="8dp"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="12dp"
+            android:textColor="#26215C"
+            android:textSize="16sp"
+            tools:text="🎯 Motif : Tourisme" />
+
+        <Button
+            android:id="@+id/btn_refuser_er"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="140dp"
+            android:backgroundTint="#D32F2F"
+            android:text="❌ Refuser (Risque de paradoxe)"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_approuver_er"
+            android:layout_width="242dp"
+            android:layout_height="58dp"
+            android:layout_above="@id/btn_refuser_er"
+            android:layout_marginBottom="14dp"
+            android:backgroundTint="#2E9E5B"
+            android:text="✅ Approuver le saut temporel"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
+
+
+    </RelativeLayout>
+</LinearLayout>

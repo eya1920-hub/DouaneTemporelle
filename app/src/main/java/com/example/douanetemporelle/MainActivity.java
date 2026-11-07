@@ -61,13 +61,6 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (motif.getSelectedItemPosition() == 0) {
-                    Toast.makeText(MainActivity.this,
-                            "Veuillez choisir un motif",
-                            Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
                 // BECH T EVITI ENHA DAKHALI NOM FIH ARKAM
                 if (!nom.getText().toString().trim().matches("[a-zA-ZÀ-ÿ ]+")) {
 
@@ -79,6 +72,14 @@ public class MainActivity extends AppCompatActivity {
                 // DECALARTION DES 2VAS BECH NSTOCKI FIHOM LES VALS DU USER W AAMLT TRY W CATCH BECH NDECLENCHI EXCEP AU CAS FAMECH COMPATBLITE MAA LMATLOUB
                 int anneeNaissance;
                 int anneeDestination;
+                // UNE ANNEE  DOIT CONTENIR 4 CHIFS
+                if (ann_nais.getText().toString().trim().length() != 4
+                        || ann_dest.getText().toString().trim().length() != 4) {
+                    Toast.makeText(MainActivity.this,
+                            "L'année doit contenir 4 chiffres",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 try {
                     anneeNaissance = Integer.parseInt(
