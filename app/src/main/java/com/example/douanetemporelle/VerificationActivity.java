@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class VerificationActivity extends AppCompatActivity {
@@ -11,6 +12,9 @@ public class VerificationActivity extends AppCompatActivity {
     // LES COMPOSANTS MTE3I ATHOUMA KL AADA
     private TextView tvNom, tvAge, tvMotif;
     private Button btnApprouver, btnRefuser;
+
+    // nafs l matricule li staamltou fel MainActivity (4 derniers chiffres)
+    private String matricule = "0456";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +30,6 @@ public class VerificationActivity extends AppCompatActivity {
 
         // recu ll data li dakhltha mloul
         Intent i = getIntent();
-        String matricule = "0456"; // M MATRUCULE LI STA3MLTHA FEL MainActivity(4DERNIERS CHIFF ML CIN MTE3I)
 
         String nom = i.getStringExtra(
                 MainActivity.creerCle(matricule, "NOM_VOYAGEUR"));
@@ -44,12 +47,31 @@ public class VerificationActivity extends AppCompatActivity {
         tvNom.setText("👤 Nom : " + nom);
         tvAge.setText("⏳ Âge temporel  : " + ageTemporel + " ans");
         tvMotif.setText("🎯 Motif :\n" + motif);
-// TEST LEMZ SI LMOTIF est Modification du passé WEL AGE EST PREMIER NDEACTIVIW BOUTON APPROUVER
+
+        // TEST LENASI LMOTIF EST " Modification du passé " WEL AGE EST PREMIER NDEACTIVIW BOUTON APPROUVER
         if (motif != null && motif.contains("Modification du passé")
                 && estPremier(ageTemporel)) {
             btnApprouver.setEnabled(false);
             btnApprouver.setAlpha(0.5f);
         }
+        // tanbih ken el motif Fuite (ma n3attlouch el bouton juste n7adhrou (zedtha ena mr))
+        if (motif != null && motif.contains("Fuite")) {
+            Toast.makeText(this, "⚠️ Attention : voyageur en fuite", Toast.LENGTH_LONG).show();
+        }
+
+        // bouton approuver : nab3ath verdict = true m3a esm l voyageur
+        btnApprouver.setOnClickListener(v -> envoyerVerdict(true, nom));
+
+        // bouton refuser : nab3ath verdict = false m3a esm l voyageur
+        btnRefuser.setOnClickListener(v -> envoyerVerdict(false, nom));
+    }
+
+    // intent implicite l ResultActivity yhez ll verdict (boolean) w esm l voyageur
+    private void envoyerVerdict(boolean verdict, String nom) {
+        Intent r = new Intent(VerificationActivity.this, ResultActivity.class);
+        r.putExtra(MainActivity.creerCle(matricule, "VERDICT"), verdict);
+        r.putExtra(MainActivity.creerCle(matricule, "NOM_VOYAGEUR"), nom);
+        startActivity(r);
     }
 
     // methode pour verifier si un nombre est premier ELLE BASEE SUR CETTE  REGLE "si un nombre possède un diviseur supérieur à sa racine carrée, il possède forcément aussi un diviseur inférieur à sa racine carrée."
